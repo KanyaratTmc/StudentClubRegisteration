@@ -1,122 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>ฟอร์มสมัครเข้าชมรม ออกแบบจาก bootstrap5 by devbanban.com 2022</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="alert alert-danger" role="alert">
-            <h3>ฟอร์มสมัครเข้าชมรมนักศึกษา </h3>
-          </div>
-          <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
-            <div class="form-group row mb-3">
-              <div class="col-sm-2 control-label">
-                ชมรมที่สนใจ :
-              </div>
-              <div class="col-sm-4">
-                <select name="club_id" class="form-control" required>
-                  <option value="">เลือกข้อมูล</option>
-                  <option value="1">-ชมรมโปรแกรมเมอร์</option>
-                  <option value="2">-ชมรมถ่ายภาพ</option>
-                  <option value="3">-ชมรมดนตรี</option>
-                  <option value="4">-ชมรมกีฬา</option>
-                  <option value="5">-ชมรมยูทูปเบอร์</option>
-                </select>
-              </div>
-              <div class="col-sm-2 control-label" class="form-control" >
-                รหัสนักศึกษา :
-              </div>
-              <div class="col-sm-2">
-                <input type="text" name="std_code" required minlength="4" maxlength="13" class="form-control"  placeholder="รหัสนักศึกษา">
-              </div>
-               
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>สมัครเข้าชมรม | Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg p-4">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3>ฟอร์มสมัครเข้าชมรมนักศึกษา</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="clubForm" action="" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label class="form-label">ชมรมที่สนใจ:</label>
+                                <select name="club_id" class="form-control" required>
+                                    <option value="">เลือกชมรม</option>
+                                    <option value="1">ชมรมเขียนโปรแกรมคอมพิวเตอร์</option>
+                                    <option value="2">ชมรมถ่ายภาพ</option>
+                                    <option value="3">ชมรมดนตรี</option>
+                                    <option value="4">ชมรมกีฬา</option>
+                                    <option value="5">ชมรมอีสปอร์ต</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">รหัสนักศึกษา:</label>
+                                <input type="text" name="std_code" class="form-control" required minlength="4" maxlength="11" placeholder="รหัสนักศึกษา">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">คำนำหน้า:</label>
+                                    <select name="std_title" class="form-control" required>
+                                        <option value="">เลือกคำนำหน้า</option>
+                                        <option value="นาย">นาย</option>
+                                        <option value="นาง">นาง</option>
+                                        <option value="นางสาว">นางสาว</option>
+                                        <option value="ว่าที่ร้อยตรี">ว่าที่ร้อยตรี</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">ชื่อ:</label>
+                                    <input type="text" name="std_name" class="form-control" required minlength="2" placeholder="ชื่อ">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">นามสกุล:</label>
+                                    <input type="text" name="std_lastname" class="form-control" required minlength="2" placeholder="นามสกุล">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">เบอร์โทร:</label>
+                                    <input type="text" name="std_phone" class="form-control" required placeholder="เบอร์มือถือ" maxlength="10">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">อีเมล์:</label>
+                                    <input type="email" name="std_email" class="form-control" required placeholder="email">
+                                </div>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <label class="form-label">ภาพโปรไฟล์:</label>
+                                <br>
+                                <img id="preview" class="rounded-circle" width="100" height="100" alt="Preview Image">
+                                <br><br>
+                                <input type="file" name="std_img" class="form-control" required accept="image/png, image/jpeg" onchange="previewImage(event)">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">สมัครเข้าชมรม</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            
-            <div class="form-group row mb-3">
-              <div class="col-sm-2 control-label">
-                คำนำหน้า :
-              </div>
-              <div class="col-sm-2">
-                <select name="std_title" class="form-control" required>
-                  <option value="">เลือกข้อมูล</option>
-                  <option value="นาย">นาย</option>
-                  <option value="นาง">นาง</option>
-                  <option value="นางสาว">นางสาว</option>
-                  <option value="ว่าที่ร้อยตรี">ว่าที่ร้อยตรี</option>
-                </select>
-              </div>
-              
-              <div class="col-sm-1 control-label">
-                ชื่อ :
-              </div>
-              <div class="col-sm-2">
-                <input type="text" name="std_name" required class="form-control" minlength="2" placeholder="ชื่อ">
-              </div>
-              
-              <div class="col-sm-1 control-label">
-                นามสกุล :
-              </div>
-              <div class="col-sm-2">
-                <input type="text" name="std_lastname" required class="form-control" minlength="2" placeholder="นามสกุล">
-              </div>
-            </div>
-            
-            <div class="form-group row mb-3">
-              <div class="col-sm-2 control-label">
-                เบอร์โทร :
-              </div>
-              <div class="col-sm-3">
-                <input type="text" name="std_phone" required class="form-control"  placeholder="เบอร์มือถือ" maxlength="15">
-              </div>
-              
-              <div class="col-sm-1 control-label">
-                อีเมล์ :
-              </div>
-              <div class="col-sm-3">
-                <input type="email" name="std_email" required class="form-control"  placeholder="email">
-              </div>
-            </div>
-           
-            <div class="form-group row mb-3">
-              <div class="col-sm-2 control-label">
-                ภาพโปรไฟล์ :
-              </div>
-              <div class="col-sm-2">
-                <script type='text/javascript'>
-                function preview_image(event)
-                {
-                var reader = new FileReader();
-                reader.onload = function()
-                {
-                var output = document.getElementById('showimg');
-                output.src = reader.result;
-                }
-                reader.readAsDataURL(event.target.files[0]);
-                }
-                </script>
-                <img  id="showimg" width="100" height="100"> <br><br>
-                <input type="file" id="showimg" name="std_img" required accept="image/png, image/jpeg, image/jpg" onchange="preview_image(event)">
-              </div>
-            </div>
-
-           
-            <div class="form-group row mb-3">
-              <div class="col-sm-2">
-              </div>
-              <div class="col-sm-3">
-                
-                <button type="submit" class="btn btn-primary">สมัครเข้าชมรม</button>
-              </div>
-            </div>
-          </form>
         </div>
-      </div>
     </div>
-  </body>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('preview');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        document.getElementById("clubForm").addEventListener("submit", function(event) {
+            let form = event.target;
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                alert("กรุณากรอกข้อมูลให้ครบถ้วน!");
+            }
+            form.classList.add("was-validated");
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
