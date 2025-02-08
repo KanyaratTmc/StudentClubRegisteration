@@ -120,13 +120,3 @@
     </div>
   </body>
 </html>
-
-<!--
-  devbanban.com
-//ขอแนะนำระบบพร้อมใช้ ราคาเบาๆ ซื้อแล้วได้ code ทั้งหมด เอาไปต่อยอดได้
-// ระบบฐานข้อมูลศิษย์เก่า https://www.youtube.com/watch?v=1gOSGHX3xDI
-//ระบบแจ้งซ่อม https://www.youtube.com/watch?v=bkYBKfFauB8
-//ระบบจัดการหอพัก https://www.youtube.com/watch?v=O7Bh0BNCDz8
-//ระบบสอบออนไลน์ https://www.youtube.com/watch?v=WOTLFEflkMk
-//ระบบพร้อมใช้ทั้งหมด https://devbanban.com/?p=4425
--->
